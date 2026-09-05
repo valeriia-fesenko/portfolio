@@ -4,7 +4,7 @@ One-page portfolio / résumé site for Valeriia Fesenko, Data Analyst based in
 Dresden, Germany. Built with plain HTML/CSS/JS — no build step, no
 dependencies besides Google Fonts (loaded via CDN).
 
-**Live demo:** add your GitHub Pages URL here once deployed.
+**Live site:** https://valeriia-fesenko.github.io/portfolio/
 
 ## Files
 
