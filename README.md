@@ -1,6 +1,6 @@
 # Valeriia Fesenko — Portfolio
 
-One-page portfolio / résumé site for Valeriia Fesenko, Data Analyst based in
+One-page portfolio / resume site for Valeriia Fesenko, Data and Web Analyst based in
 Dresden, Germany. Built with plain HTML/CSS/JS — no build step, no
 dependencies besides Google Fonts (loaded via CDN).
 
@@ -34,6 +34,3 @@ dependencies besides Google Fonts (loaded via CDN).
   project repos are public, add `<a class="project-link" href="...">`
   under each project if you'd like direct links.
 
-## Suggested repository description
-
-> One-page portfolio/résumé — Data Analyst (Python, SQL, Power BI, Tableau) based in Dresden, Germany.
