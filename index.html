@@ -147,17 +147,28 @@
   .xp-item li{margin-bottom:4px;}
 
   /* ---------- PROJECTS ---------- */
-  .project{display:grid;grid-template-columns:130px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line);}
-  .project:first-of-type{border-top:none;}
-  .project-meta{font-family:'IBM Plex Mono',monospace;}
-  .project-meta .date{font-size:12px;color:var(--muted);display:block;margin-bottom:6px;}
-  .project-meta .tool-mark{font-size:12px;color:var(--teal);}
-  .project h3{font-size:19px;margin-bottom:8px;}
-  .project p{font-size:14.5px;color:var(--muted);margin-bottom:12px;max-width:68ch;}
-  .metric-row{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px;}
-  .metric-row .m{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);border-left:2px solid var(--amber);padding-left:8px;}
-  .tagrow{display:flex;flex-wrap:wrap;gap:7px;}
-  .tagrow span{font-family:'IBM Plex Mono',monospace;font-size:12px;border:1px solid var(--line);padding:3px 8px;color:var(--muted);}
+  .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .project-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:26px 24px;box-shadow:0 1px 3px rgba(20,24,31,.04);
+    transition:box-shadow .25s ease, transform .25s ease;
+    display:flex;flex-direction:column;
+  }
+  .project-card:hover{box-shadow:0 14px 30px -16px rgba(20,24,31,.20);transform:translateY(-2px);}
+  .project-card-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .project-date{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+  .project-tools-mark{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--teal);}
+  .project-card h3{font-size:18px;margin-bottom:10px;}
+  .project-card p{font-size:14px;color:var(--muted);margin-bottom:16px;}
+  .metric-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:16px;}
+  .metric-row .m{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink);border-left:2px solid var(--amber);padding-left:8px;}
+  .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;}
+  .tagrow span{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;border-radius:999px;
+    border:1px solid transparent;background:var(--panel);padding:5px 12px;color:var(--muted);
+    transition:border-color .2s, color .2s, background .2s;
+  }
+  .tagrow span:hover{border-color:var(--teal);color:var(--teal);background:var(--paper);}
 
   /* ---------- EDUCATION ---------- */
   .edu-item{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line);}
@@ -201,8 +212,8 @@
     }
     .navlinks.open{display:flex;}
     .menu-btn{display:block;}
-    .skill-row,.xp-item,.project,.edu-item{grid-template-columns:1fr;}
-    .skills-grid{grid-template-columns:1fr;}
+    .skill-row,.xp-item,.edu-item{grid-template-columns:1fr;}
+    .skills-grid,.projects-grid{grid-template-columns:1fr;}
     .contact-inner{flex-direction:column;align-items:flex-start;}
     footer .wrap{padding:0 24px;}
   }
@@ -383,12 +394,12 @@
         <h2>Projects</h2>
       </div>
 
-      <div class="project reveal">
-        <div class="project-meta">
-          <span class="date">Aug 2026</span>
-          <span class="tool-mark">Python · Looker Studio</span>
-        </div>
-        <div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-card-head">
+            <span class="project-date">Aug 2026</span>
+            <span class="project-tools-mark">Python · Looker Studio</span>
+          </div>
           <h3>Automated Web Analytics &amp; KPI Reporting</h3>
           <p>Built a pipeline unifying five data sources — GA4, Search Console, Bing Webmaster Tools, Tag Manager, PageSpeed Insights — into a live Looker Studio dashboard, replacing manual reporting with faster, more consistent decisions.</p>
           <div class="metric-row">
@@ -398,14 +409,12 @@
           </div>
           <div class="tagrow"><span>Python</span><span>Pandas</span><span>Google APIs</span><span>Looker Studio</span></div>
         </div>
-      </div>
 
-      <div class="project reveal">
-        <div class="project-meta">
-          <span class="date">Jul 2026</span>
-          <span class="tool-mark">Python · Power BI</span>
-        </div>
-        <div>
+        <div class="project-card reveal">
+          <div class="project-card-head">
+            <span class="project-date">Jul 2026</span>
+            <span class="project-tools-mark">Python · Power BI</span>
+          </div>
           <h3>CRM, Sales &amp; Product Analytics — Online Coding School</h3>
           <p>End-to-end analysis of CRM, marketing and sales data to find conversion, revenue and profitability drivers. Cleaned 156,000+ records, built unit-economics models (CAC, CLTV, LTV, CM1, APC, SLA) and a five-page Power BI dashboard with data-driven A/B test hypotheses.</p>
           <div class="metric-row">
@@ -414,14 +423,12 @@
           </div>
           <div class="tagrow"><span>Python</span><span>Power BI</span><span>Power Query</span><span>DAX</span></div>
         </div>
-      </div>
 
-      <div class="project reveal">
-        <div class="project-meta">
-          <span class="date">Jun 2026</span>
-          <span class="tool-mark">Python · Power BI</span>
-        </div>
-        <div>
+        <div class="project-card reveal">
+          <div class="project-card-head">
+            <span class="project-date">Jun 2026</span>
+            <span class="project-tools-mark">Python · Power BI</span>
+          </div>
           <h3>German Logistics Labor Market Analysis</h3>
           <p>Collected, cleaned and visualized 2,147 job postings for logistics roles in Germany via the Arbeitsagentur API and web scraping — extracting hard/soft skills, languages and salaries, layering in Google Trends, in an interactive Power BI dashboard.</p>
           <div class="metric-row">
@@ -430,14 +437,12 @@
           </div>
           <div class="tagrow"><span>Python</span><span>BeautifulSoup</span><span>Power BI</span><span>Google Trends</span></div>
         </div>
-      </div>
 
-      <div class="project reveal">
-        <div class="project-meta">
-          <span class="date">Apr 2026</span>
-          <span class="tool-mark">Tableau</span>
-        </div>
-        <div>
+        <div class="project-card reveal">
+          <div class="project-card-head">
+            <span class="project-date">Apr 2026</span>
+            <span class="project-tools-mark">Tableau</span>
+          </div>
           <h3>Airport &amp; Airline Performance Analysis</h3>
           <p>Interactive Tableau dashboard analyzing the performance of US airports and airlines across 250,000 flight records — KPIs and calculated fields for delays and cancellations, with filters, parameters, dashboard actions and a Sankey visualization.</p>
           <div class="metric-row">
@@ -445,26 +450,22 @@
           </div>
           <div class="tagrow"><span>Tableau</span><span>Calculated Fields</span><span>Dashboard Actions</span></div>
         </div>
-      </div>
 
-      <div class="project reveal">
-        <div class="project-meta">
-          <span class="date">Feb 2026</span>
-          <span class="tool-mark">Python</span>
-        </div>
-        <div>
+        <div class="project-card reveal">
+          <div class="project-card-head">
+            <span class="project-date">Feb 2026</span>
+            <span class="project-tools-mark">Python</span>
+          </div>
           <h3>Movie Search CLI — MySQL &amp; MongoDB</h3>
           <p>Interactive Python CLI for searching a movie catalog, combining MySQL for structured catalog data with MongoDB for search analytics and logging — parameterized queries, pagination, input validation and aggregation pipelines.</p>
           <div class="tagrow"><span>Python</span><span>PyMySQL</span><span>PyMongo</span><span>MySQL (Sakila)</span><span>MongoDB</span></div>
         </div>
-      </div>
 
-      <div class="project reveal">
-        <div class="project-meta">
-          <span class="date">Dec 2025</span>
-          <span class="tool-mark">Power BI</span>
-        </div>
-        <div>
+        <div class="project-card reveal">
+          <div class="project-card-head">
+            <span class="project-date">Dec 2025</span>
+            <span class="project-tools-mark">Power BI</span>
+          </div>
           <h3>E-Commerce Dashboard</h3>
           <p>Interactive dashboard analyzing sales, logistics, payments and customer reviews across the full order process — Power Query cleaning and transformation, data modeling and DAX KPIs.</p>
           <div class="metric-row">
@@ -474,7 +475,6 @@
           <div class="tagrow"><span>Power BI</span><span>Power Query</span><span>DAX</span></div>
         </div>
       </div>
-
     </div>
   </section>
 
